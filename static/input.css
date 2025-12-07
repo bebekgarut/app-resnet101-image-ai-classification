@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@source '../**/*.jinja';
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --color-warna1: #00426b;
+  --color-warna2: #044971;
+  --color-warna3: #0ba5c8;
+  --color-warna4: #19c8f0;
+  --color-warna5: #72C2E6;
+}
