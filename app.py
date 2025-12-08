@@ -8,16 +8,15 @@ import numpy as np
 
 app = Flask(__name__)
 model = tf.keras.models.load_model(
-"model.h5",
-custom_objects={
-"preprocess_input": preprocess_input,
-"Lambda": Lambda
-}
+    "model.h5",
+    custom_objects={
+        "preprocess_input": preprocess_input,
+        "Lambda": Lambda
+    }
 )
 
 img_height = 32
 img_width = 32
-
 
 app.config["UPLOAD_FOLDER"] = "static/uploads"
 
@@ -38,7 +37,6 @@ def index():
 
             img_path = filepath
 
-            # Load & preprocess (preprocess_input sudah ada di model)
             img = image.load_img(filepath, target_size=(img_height, img_width))
             img_array = image.img_to_array(img)
             img_array = np.expand_dims(img_array, axis=0)
